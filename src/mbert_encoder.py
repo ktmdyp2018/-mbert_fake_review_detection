@@ -1,13 +1,4 @@
-"""
-Contextual embedding module (Section III.C, Table 7-A).
 
-Wraps a Hugging Face multilingual encoder (default: bert-base-multilingual-
-cased -> 104 languages, 119,547 WordPiece vocab, 12 layers / 12 heads /
-hidden 768). The first `num_frozen_layers` transformer blocks are frozen;
-only the remaining top layers are fine-tuned jointly with the FNN
-classifier (Table 5-B). Swappable with XLM-R / IndicBERT / MuRIL for the
-backbone-substitution study (Table 7-A).
-"""
 
 import torch
 import torch.nn as nn
