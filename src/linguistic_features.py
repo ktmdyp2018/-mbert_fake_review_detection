@@ -1,9 +1,3 @@
-"""
-Linguistic / stylometric feature extraction (Section III.G).
-
-F_linguistic (Eq. 8-adjacent, Table 5-A) is a 4-dim vector:
-    [review_length, repetition_ratio, readability_score, ASV]
-"""
 
 from typing import List
 import numpy as np
