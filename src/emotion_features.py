@@ -1,23 +1,4 @@
-"""
-Russell's Circumplex Model of emotion detection (Section III.D).
 
-Pipeline per review i:
-  1. Each sentence k is scored for (Val_i^(k), Aro_i^(k)) using a VAD
-     (valence-arousal-dominance) lexicon [34].
-  2. Sentence-level (Val, Aro) pairs are aggregated into review-level
-     Em_i = (Val_i, Aro_i) via an ATTENTION-WEIGHTED mean (Eq. 4, revised):
-         Val_i = sum_k beta_k * Val_i^(k),   Aro_i = sum_k beta_k * Aro_i^(k)
-         beta_k = softmax( w^T tanh(W h_k) )
-     where h_k is a pooled mBERT representation of sentence k. A
-     simple-mean aggregator is also provided for ablation comparison.
-  3. Emotion Intensity        EI_i  = sqrt(Val_i^2 + Aro_i^2)                  (Eq. 5)
-     Emotion Polarity         EP_i  = atan2(Aro_i, Val_i) / pi                (Eq. 6)
-     Sentiment_i (Eq. 7a)     = P(positive) - P(negative) in [-1, +1]
-     Emotion Inconsistency    EIC_i = |Sentiment_i - Val_i|                   (Eq. 7)
-  4. The complete emotion feature vector (Eq. 8) concatenates
-     [Val_i, Aro_i, EI_i, EP_i, EIC_i, EmojiEM_i] -> 7-dim vector, where
-     EmojiEM_i = (emoji_valence, emoji_arousal) from emoji_features.py.
-"""
 
 from typing import List, Sequence
 import math
