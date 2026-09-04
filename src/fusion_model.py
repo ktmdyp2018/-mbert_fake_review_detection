@@ -1,6 +1,6 @@
 """
 Feature Fusion Layer + Feedforward Neural Network classifier
-(Section III.G/H, Table 5-A).
+
 
 F_i = C_i (768) ++ F_emotion (7) ++ F_linguistic (4) ++ F_cross (768)   -> 1547-dim
 
