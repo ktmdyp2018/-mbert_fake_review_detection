@@ -1,13 +1,4 @@
-"""
-Heuristic proxy-labelling of reviews as Fake / Genuine.
 
-IMPORTANT (Section III.A, Table 2-B - label/feature independence):
-The three signals used here (rating extremity, burstiness, behavioural
-pattern) are used ONLY to construct the label. They are never exposed to
-the downstream model as input features - `build_feature_frame` in
-src/dataset.py explicitly drops config.LABELING.label_only_columns before
-any feature extraction happens, to prevent label leakage.
-"""
 
 import pandas as pd
 import numpy as np
