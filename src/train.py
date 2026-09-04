@@ -1,12 +1,4 @@
-"""
-Training loop (Table 5-B):
-    - AdamW for the mBERT backbone (lr=2e-5, weight_decay=0.01)
-    - Adam for the FNN head (lr=5e-4)
-    - Linear LR decay with warm-up ratio 0.1
-    - Gradient clipping at max-norm 1.0
-    - Early stopping (patience=3, monitored on validation loss)
-    - Domain-adversarial loss (Eq. 9b) ramped in via the GRL schedule
-"""
+
 
 import copy
 import random
