@@ -1,26 +1,3 @@
-"""
-Cross-dataset / cross-language feature-learning module (Section III.F).
-
-Two complementary mechanisms:
-
-  (a) Weighted interpolation (Eq. 9a) - auxiliary shared-representation
-      regulariser applied to paired English/Hindi review representations
-      during training:
-          F_cross = alpha * C_i^EN + (1 - alpha) * C_i^HI
-
-  (b) Domain-adversarial training (Eq. 9b) via a Gradient Reversal Layer
-      (GRL - Ganin & Lempitsky, 2015): a domain classifier D(.) is trained
-      to predict the language label l_i from C_i, while the encoder is
-      trained adversarially to fool D(.):
-          L_total = L_cls - lambda * L_domain
-          lambda(p) = 2 / (1 + exp(-gamma * p)) - 1        (p = training progress in [0,1])
-
-For single-language inference (i.e. deploying on one language only, no
-paired cross-lingual batch available), F_cross defaults to C_i itself
-(alpha=1, no paired partner) so the fused vector dimensionality (Table
-5-A) stays constant at every stage of training/inference.
-"""
-
 import torch
 import torch.nn as nn
 from torch.autograd import Function
