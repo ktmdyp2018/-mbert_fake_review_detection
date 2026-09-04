@@ -1,13 +1,4 @@
-"""
-Preprocessing pipeline (Section III / Fig. 1 preprocessing block):
-    - noise removal
-    - Unicode / case normalisation
-    - tokenisation
-    - stop-word removal
-    - emoji extraction (emojis are pulled OUT of the text before the text
-      is fed to mBERT, and mapped separately to an emotion vector by
-      src/emoji_features.py, mirroring "Emoji and Emotion extraction" in Fig. 1)
-"""
+
 
 import re
 import unicodedata
