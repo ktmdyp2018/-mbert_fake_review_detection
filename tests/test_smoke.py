@@ -1,19 +1,4 @@
-"""
-End-to-end smoke test. Uses a small sample of the REAL Hindi dataset
-(downloaded via scripts/download_datasets.py) plus a small synthetically
-generated English sample (since the Kaggle English set requires manual
-auth and cannot be fetched in this environment) to verify that every
-stage of the pipeline - loading, labelling, feature extraction, model
-construction, one training epoch, evaluation, and ablation - runs without
-error.
 
-This is NOT a benchmark: with only a handful of epochs on a tiny sample
-and (if offline) a randomly-initialised mock encoder standing in for
-mBERT, accuracy numbers here are meaningless. Its only purpose is to
-prove the code is wired together correctly end-to-end.
-
-Run with:  python -m tests.test_smoke
-"""
 
 import sys
 import os
