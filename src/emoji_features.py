@@ -1,14 +1,4 @@
-"""
-Emoji -> (valence, arousal) mapping, producing the EmojiEM_i component of
-the emotion feature vector F_emotion (Section III.D, Fig. 1 "Emoji and
-Emotion extraction").
 
-A compact hand-curated valence/arousal lookup table is provided for the
-most frequent review emojis (covers >95% of emoji occurrences in typical
-e-commerce review corpora). Unknown emojis fall back to a neutral-low
-(0.0, 0.2) vector rather than being dropped, so review-level aggregation
-is always well defined.
-"""
 
 from typing import List, Tuple
 import numpy as np
