@@ -1,14 +1,4 @@
-"""
-Statistical significance testing (Section IV.C.c, Table 6-A).
 
-  - multi_seed_run(): trains/evaluates the model over TRAIN.seeds and
-    reports mean +/- SD and a 95% confidence interval (normal
-    approximation over the 5 runs).
-  - mcnemar_test(): paired McNemar's test between two models' predictions
-    on the same test set.
-  - paired_bootstrap_ci(): bootstrap 95% CI for the accuracy DIFFERENCE
-    between two models (proposed vs. baseline).
-"""
 
 import numpy as np
 from scipy import stats
