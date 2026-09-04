@@ -1,13 +1,3 @@
-"""
-Dataset loading and feature-frame construction (Section III.A/III.B).
-
-`load_english_dataset` / `load_hindi_dataset` read the raw CSV/XLSX files
-(Kaggle [31] / GitHub [32]), apply heuristic labelling (src/labeling.py),
-and hand back a DataFrame with a `label` column plus the *raw* text -
-handcrafted feature extraction happens afterwards in `build_feature_frame`,
-enforcing label/feature independence (Table 2-B): `label_only_columns`
-are dropped before feature extraction ever sees the frame.
-"""
 
 import os
 import numpy as np
