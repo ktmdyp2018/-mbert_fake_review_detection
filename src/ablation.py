@@ -1,18 +1,4 @@
-"""
-Ablation study runner (Section IV.D, Tables 8, 9, 9-A, 9-B, and the
-backbone-substitution study of Table 7-A).
 
-Two ablation modes are supported:
-  - "cumulative": modules are added one at a time IN SEQUENCE on top of
-    an mBERT-only baseline (Tables 8-9 in the original manuscript).
-  - "isolated": each module is added directly and ONLY to the mBERT-only
-    baseline (Table 9-A), so contributions are not confounded by
-    ordering.
-
-Both modes work by zeroing out the corresponding slice of the fused
-feature vector inside `FusionFNN`, via a lightweight wrapper that masks
-`handcrafted` / `F_cross` before the fusion layer.
-"""
 
 from typing import List
 import copy
